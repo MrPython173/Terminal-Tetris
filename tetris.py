@@ -538,7 +538,9 @@ def main():
                 controls()
 
             if c == 109: # m
-                menu()
+                m = menu()
+                if m == 'exit':
+                    return 'exit'
 
             if c == 119: # w
                 if doesPieceFit(rotate(tetrominoes[p], pr), board, (px, py + 1)):
@@ -680,7 +682,9 @@ if __name__ == '__main__':
 
         if m == 'play':
             while True:
-                main()
+                m = main()
+                if m == 'exit':
+                    break
                 gameOver()
 
     finally:
